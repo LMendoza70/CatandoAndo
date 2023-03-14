@@ -1,15 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const Estilos=StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:colors.primary,
-        alignItems:'center',
-        justifyContent:'center'
-    }
-})
-
-const colors = {
+const Colors = {
     primary: '#42291A', 
     // Marrón oscuro: ideal para el logotipo, encabezados y botones principales.
     secondary: '#3B514F', 
@@ -26,6 +17,58 @@ const colors = {
     // Gris claro: para los elementos secundarios como iconos inactivos, 
     //textos menos importantes, y para el contraste con otros colores.
   };
+
+  const vals={
+    usuario:''
+  }
+
+const Estilos=StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:Colors.background,
+        alignItems:'center',
+        justifyContent:'center',
+        padding:10
+    },
+    cajaStyle:{
+        flexDirection:"row",
+        backgroundColor:Colors.neutral,
+        borderWidth:2,
+        borderColor:Colors.secondary,
+        alignContent:'stretch',
+        alignItems:'center',
+        alignSelf:'stretch',
+        paddingHorizontal:10,
+        paddingVertical:5,
+        borderRadius:5,
+        margin:10,
+    },
+    boton:{
+        flexDirection:"row",
+        backgroundColor:Colors.accent,
+        borderWidth:2,
+        borderColor:Colors.secondary,
+        alignItems:'center',
+        paddingHorizontal:10,
+        paddingVertical:5,
+        borderRadius:5,
+        margin:10,
+    },
+    textLink:{
+        fontSize:15,
+        fontStyle:'italic',
+        color:Colors.neutral
+    },
+    textTitle:{
+        fontSize:25,
+        fontStyle:'italic',
+        color:Colors.primary,
+        fontFamily:'serif'
+    }
+
+})
+
+
   
 
-export {Estilos, colors}
+export {Estilos, Colors,vals}
