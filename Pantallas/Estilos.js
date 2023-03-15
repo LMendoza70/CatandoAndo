@@ -64,7 +64,61 @@ const Estilos=StyleSheet.create({
         fontStyle:'italic',
         color:Colors.primary,
         fontFamily:'serif'
-    }
+    },
+    logo:{
+        height:250,
+        width:350
+    },
+    card:{
+        flexDirection:'column',
+        borderColor:Colors.secondary,
+        borderWidth:2,
+        borderRadius:10,
+        backgroundColor:Colors.background,
+        paddingTop:5,
+        marginBottom:25,
+        marginHorizontal:10
+      },
+      Titulo:{
+        fontSize:25,
+        color:Colors.primary,
+        textAlign:'center',
+        fontWeight:'bold',
+        marginBottom:30,
+        shadowColor: Colors.secondary,
+        shadowOpacity: 50,
+        shadowRadius: 5,
+        shadowOffset: { width: 20, height: 20 }
+      },
+      texto:{
+        fontSize:15,
+        color:colors.darkCoffee,
+        fontWeight:'bold',
+        textAlign:'justify',
+        marginHorizontal:10,
+        marginBottom:30,
+        shadowColor: colors.darkGreen,
+        shadowOpacity: 50,
+        shadowRadius: 5,
+        shadowOffset: { width: 20, height: 20 }
+      },
+      foto:{
+        width: 200,
+        height: 200,
+        borderRadius: 100,
+        shadowColor: colors.darkGreen,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+        alignSelf:'center'
+      },
+      logo:{
+        height:60,
+        width:160,
+        padding:5,
+        margin:15
+      }
 
 })
 

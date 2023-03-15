@@ -4,9 +4,11 @@ import { Colors, Estilos } from './Estilos'
 import { Fontisto } from '@expo/vector-icons';
 import { Boton, Caja, CajaPass, TextLink } from './Componenetes';
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
     //funcionalidad
+    const nav=useNavigation()
     const [user, setuser] = useState('')
     const [pass, setpass] = useState('')
     //const [data, setdata] = useState(null)
@@ -21,6 +23,7 @@ const Login = () => {
                 alert('Usuario inexistente...')
             }else if(data.password==pass){
                 alert('Logeo correcto...')
+                nav.navigate('home')
             }else{
                 alert('password incorrecto')
             }
