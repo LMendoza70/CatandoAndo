@@ -92,12 +92,12 @@ const Estilos=StyleSheet.create({
       },
       texto:{
         fontSize:15,
-        color:colors.darkCoffee,
+        color:Colors.primary,
         fontWeight:'bold',
         textAlign:'justify',
         marginHorizontal:10,
         marginBottom:30,
-        shadowColor: colors.darkGreen,
+        shadowColor: Colors.secondary,
         shadowOpacity: 50,
         shadowRadius: 5,
         shadowOffset: { width: 20, height: 20 }
@@ -106,7 +106,7 @@ const Estilos=StyleSheet.create({
         width: 200,
         height: 200,
         borderRadius: 100,
-        shadowColor: colors.darkGreen,
+        shadowColor: Colors.secondary,
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
         shadowRadius: 2,
@@ -118,11 +118,17 @@ const Estilos=StyleSheet.create({
         width:160,
         padding:5,
         margin:15
+      },
+      TituloD:{
+        fontSize:20,
+        fontWeight:'bold',
+        color:Colors.primary
+      },
+      TextoContenido:{
+        fontSize:15,
+        color:Colors.primary
       }
 
 })
-
-
-  
 
 export {Estilos, Colors,vals}

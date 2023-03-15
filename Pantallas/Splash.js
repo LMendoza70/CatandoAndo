@@ -21,7 +21,7 @@ useEffect(()=>{
     let unsubscribe = navigation.addListener('focus', onFocus)
 
     return () => {
-        clearTimeout(timeoutId);
+        clearTimeout(tmoid);
         unsubscribe();
     }
 },[navigation])
