@@ -23,7 +23,7 @@ const Login = () => {
                 alert('Usuario inexistente...')
             }else if(data.password==pass){
                 alert('Logeo correcto...')
-                nav.navigate('home')
+                nav.navigate('homei')
             }else{
                 alert('password incorrecto')
             }

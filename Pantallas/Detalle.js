@@ -1,4 +1,4 @@
-import { View, ScrollView, Image } from 'react-native'
+import { View, ScrollView, Image,Text } from 'react-native'
 import React from 'react'
 import { Estilos } from './Estilos'
 

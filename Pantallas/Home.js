@@ -2,8 +2,10 @@ import { View, Text, ScrollView, Image,TouchableOpacity } from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import React from 'react'
 import { Colors, Estilos } from './Estilos'
+import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
+  const nav=useNavigation()
   return (
     <ScrollView>
       <View style={Estilos.container}>
@@ -17,7 +19,7 @@ const Home = () => {
         </View>
         <ScrollView horizontal>
           
-          <TouchableOpacity style={Estilos.card} >
+          <TouchableOpacity style={Estilos.card} onPress={()=>nav.navigate('detalle')}>
             <Image source={require('../assets/cafe1.png')} style={Estilos.foto}/>
             <Text>Café Garnica - Espinal Veracruz</Text>
             <Text>Desde $180.00 MXN </Text>
