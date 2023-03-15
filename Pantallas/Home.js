@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image } from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import React from 'react'
-import { Estilos } from './Estilos'
+import { Colors, Estilos } from './Estilos'
 
 const Home = () => {
   return (
@@ -33,10 +33,10 @@ const Home = () => {
         </TouchableOpacity>
         </ScrollView>
         <View style={{flexDirection:'row',justifyContent:'space-around',alignSelf:'stretch',padding:10}}>
-          <Ionicons name='logo-facebook' size={25} color={colors.darkCoffee}/>
-          <Ionicons name='logo-twitter' size={25} color={colors.darkCoffee}/>
-          <Ionicons name='logo-instagram' size={25} color={colors.darkCoffee}/>
-          <Ionicons name='logo-youtube' size={25} color={colors.darkCoffee}/>
+          <Ionicons name='logo-facebook' size={25} color={Colors.primary}/>
+          <Ionicons name='logo-twitter' size={25} color={Colors.primary}/>
+          <Ionicons name='logo-instagram' size={25} color={Colors.primary}/>
+          <Ionicons name='logo-youtube' size={25} color={Colors.primary}/>
       </View>
         <Text>Home</Text>
       </View>
