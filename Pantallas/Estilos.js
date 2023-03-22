@@ -84,11 +84,7 @@ const Estilos=StyleSheet.create({
         color:Colors.primary,
         textAlign:'center',
         fontWeight:'bold',
-        marginBottom:30,
-        shadowColor: Colors.secondary,
-        shadowOpacity: 50,
-        shadowRadius: 5,
-        shadowOffset: { width: 20, height: 20 }
+        marginBottom:30
       },
       texto:{
         fontSize:15,
@@ -106,11 +102,6 @@ const Estilos=StyleSheet.create({
         width: 200,
         height: 200,
         borderRadius: 100,
-        shadowColor: Colors.secondary,
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 5,
         alignSelf:'center'
       },
       logo:{

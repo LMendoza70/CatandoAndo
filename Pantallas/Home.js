@@ -3,6 +3,8 @@ import {Ionicons} from '@expo/vector-icons'
 import React from 'react'
 import { Colors, Estilos } from './Estilos'
 import { useNavigation } from '@react-navigation/native'
+import { Linking } from 'react-native'
+
 
 const Home = () => {
   const nav=useNavigation()
@@ -38,10 +40,18 @@ const Home = () => {
           </TouchableOpacity>
         </ScrollView>
         <View style={{flexDirection:'row',justifyContent:'space-around',alignSelf:'stretch',padding:10}}>
-          <Ionicons name='logo-facebook' size={25} color={Colors.primary}/>
-          <Ionicons name='logo-twitter' size={25} color={Colors.primary}/>
-          <Ionicons name='logo-instagram' size={25} color={Colors.primary}/>
-          <Ionicons name='logo-youtube' size={25} color={Colors.primary}/>
+          <TouchableOpacity onPress={()=>Linking.openURL("https://www.facebook.com/catandoando")}>
+            <Ionicons name='logo-facebook' size={25} color={Colors.primary}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons name='logo-twitter' size={25} color={Colors.primary}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons name='logo-instagram' size={25} color={Colors.primary}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons name='logo-youtube' size={25} color={Colors.primary}/>
+          </TouchableOpacity>
       </View>
       </View>
     </ScrollView>
