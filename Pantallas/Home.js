@@ -1,13 +1,61 @@
-import { View, Text, ScrollView, Image,TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Image,TouchableOpacity, ActivityIndicator } from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Colors, Estilos } from './Estilos'
 import { useNavigation } from '@react-navigation/native'
 import { Linking } from 'react-native'
 
-
 const Home = () => {
   const nav=useNavigation()
+  const [datos,setdatos]=useState(null);
+  const [loading,setloading]=useState(false);
+  
+  
+  useEffect(()=>{
+    fetch('https://catandoando.vercel.app/api/productos/home')
+    .then(res=>res.json())
+    .then(data=>{
+      setdatos(data)
+      setloading(true)
+    })
+    .catch(error=>{
+      alert('No fue posible conectarse a la API')
+      setloading(false)
+    })
+  },[])
+
+  const Carrusel=()=>{
+    return(
+      <ScrollView horizontal>
+            
+            <TouchableOpacity style={Estilos.card} onPress={()=>{
+              nav.navigate('detalle',{id:datos[0]._id})
+            }}>
+              <Image source={require('../assets/cafe1.png')} style={Estilos.foto}/>
+              <Text>{datos[0].variedad.nombre}</Text>
+              <Text>Desde ${datos[0].precio} MXN </Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={Estilos.card} onPress={()=>{
+              nav.navigate('detalle',{id:datos[1]._id})
+            }}>
+              <Image source={require('../assets/cafe2.png')} style={Estilos.foto}/>
+              <Text>{datos[1].variedad.nombre}</Text>
+              <Text>Desde ${datos[1].precio} MXN </Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={Estilos.card} onPress={()=>{
+              nav.navigate('detalle',{id:datos[2]._id})
+            }}>
+              <Image source={require('../assets/cafe-3.png')} style={Estilos.foto}/>
+              <Text>{datos[2].variedad.nombre}</Text>
+              <Text>Desde ${datos[2].precio} MXN </Text>  
+            </TouchableOpacity>
+          </ScrollView>
+    )
+  }
+  
+  if(loading==true){
   return (
     <ScrollView>
       <View style={Estilos.container}>
@@ -19,26 +67,8 @@ const Home = () => {
           finos granos mexicanos de café de especialidad, cultivado en Veracruz y tostado artesanalmente 
           por el galardonado experto Luis Murillo.</Text>
         </View>
-        <ScrollView horizontal>
-          
-          <TouchableOpacity style={Estilos.card} onPress={()=>nav.navigate('detalle')}>
-            <Image source={require('../assets/cafe1.png')} style={Estilos.foto}/>
-            <Text>Café Garnica - Espinal Veracruz</Text>
-            <Text>Desde $180.00 MXN </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={Estilos.card}>
-            <Image source={require('../assets/cafe2.png')} style={Estilos.foto}/>
-            <Text>Café Garnica - Espinal Veracruz</Text>
-            <Text>Desde $180.00 MXN </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={Estilos.card}>
-            <Image source={require('../assets/cafe-3.png')} style={Estilos.foto}/>
-            <Text>Café Garnica - Espinal Veracruz</Text>
-            <Text>Desde $180.00 MXN </Text>  
-          </TouchableOpacity>
-        </ScrollView>
+        <Carrusel/>
+        
         <View style={{flexDirection:'row',justifyContent:'space-around',alignSelf:'stretch',padding:10}}>
           <TouchableOpacity onPress={()=>Linking.openURL("https://www.facebook.com/catandoando")}>
             <Ionicons name='logo-facebook' size={25} color={Colors.primary}/>
@@ -56,6 +86,14 @@ const Home = () => {
       </View>
     </ScrollView>
   )
+  }else{
+    return(
+      <View style={Estilos.container}>
+          <Text style={Estilos.Titulo}>Loading...</Text>
+          <ActivityIndicator color={Colors.primary}/>
+      </View>
+    )
+  }
 }
 
 export default Home

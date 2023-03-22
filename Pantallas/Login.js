@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, KeyboardAvoidingView } from 'react-native'
 import { useState } from 'react' 
 import { Colors, Estilos } from './Estilos'
 import { Fontisto } from '@expo/vector-icons';
@@ -11,8 +11,6 @@ const Login = () => {
     const nav=useNavigation()
     const [user, setuser] = useState('')
     const [pass, setpass] = useState('')
-    //const [data, setdata] = useState(null)
-    //const [clik, setclik] = useState(false)
 
     const loguea=()=>{
         //funcion se ejecuata en el onclick del boton
@@ -31,6 +29,7 @@ const Login = () => {
 
     //Renderizado
   return (
+    
     <View style={Estilos.container}>
         <Text style={Estilos.textTitle}>Catando Ando</Text>
         <Fontisto name="coffeescript" size={85} color={Colors.primary}/>
@@ -40,6 +39,7 @@ const Login = () => {
         <TextLink text='¿Perdiste tu contraseña?'/>
         <TextLink text='¿no tienes cuenta? Registrate'/>
     </View>
+
   )
 }
 

@@ -2,12 +2,13 @@ import { View, ScrollView, Image,Text, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Estilos } from './Estilos'
 
-const Detalle = () => {
+const Detalle = ({route}) => {
+  const {id}=route.params;
   const [data,setdata]=useState({});
   const [loading,setloading]=useState(false);
   const [texto,setTexto]=useState('')
   useEffect(()=>{
-    fetch('https://catandoando.vercel.app/api/productos/640797ab095999bd4f36d0b0')
+    fetch('https://catandoando.vercel.app/api/productos/'+id)
     .then(res=>res.json())
     .then(dat=>{
       setdata(dat)
