@@ -32,6 +32,12 @@
         "projectId": "0d0d460a-2ef8-4b75-ac2e-bf831b0e4356"
       }
     },
-    "owner": "uthh020320"
+    "owner": "uthh020320",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0d0d460a-2ef8-4b75-ac2e-bf831b0e4356"
+    }
   }
 }
