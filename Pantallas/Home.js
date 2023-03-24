@@ -28,7 +28,7 @@ const Home = () => {
     return(
       <ScrollView horizontal>
             
-            <TouchableOpacity style={Estilos.card} onPress={()=>{
+            <TouchableOpacity style={Estilos.cardf} onPress={()=>{
               nav.navigate('detalle',{id:datos[0]._id})
             }}>
               <Image source={require('../assets/cafe1.png')} style={Estilos.foto}/>
@@ -36,7 +36,7 @@ const Home = () => {
               <Text>Desde ${datos[0].precio} MXN </Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={Estilos.card} onPress={()=>{
+            <TouchableOpacity style={Estilos.cardf} onPress={()=>{
               nav.navigate('detalle',{id:datos[1]._id})
             }}>
               <Image source={require('../assets/cafe2.png')} style={Estilos.foto}/>
@@ -44,7 +44,7 @@ const Home = () => {
               <Text>Desde ${datos[1].precio} MXN </Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={Estilos.card} onPress={()=>{
+            <TouchableOpacity style={Estilos.cardf} onPress={()=>{
               nav.navigate('detalle',{id:datos[2]._id})
             }}>
               <Image source={require('../assets/cafe-3.png')} style={Estilos.foto}/>
@@ -57,11 +57,12 @@ const Home = () => {
   
   if(loading==true){
   return (
-    <ScrollView>
+    
       <View style={Estilos.container}>
         <Image source={require('../assets/logo-catando-ando-coffee.png')} style={Estilos.logo}/>
+        <ScrollView>
         <Text style={Estilos.Titulo}>CAFE DE ESPECIALIDAD MEXICANO</Text>
-        <View style={Estilos.card}>
+        <View style={Estilos.cardf}>
           <Image source={require('../assets/luis.png')} style={Estilos.foto}/>
           <Text style={Estilos.texto}>Seleccionamos y ofrecemos, para nuestros visitantes, 
           finos granos mexicanos de café de especialidad, cultivado en Veracruz y tostado artesanalmente 
@@ -83,8 +84,8 @@ const Home = () => {
             <Ionicons name='logo-youtube' size={25} color={Colors.primary}/>
           </TouchableOpacity>
       </View>
+      </ScrollView>
       </View>
-    </ScrollView>
   )
   }else{
     return(

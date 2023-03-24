@@ -1,6 +1,6 @@
 import { View, ScrollView, Image,Text, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { Estilos } from './Estilos'
+import { Colors, Estilos } from './Estilos'
 
 const Detalle = ({route}) => {
   const {id}=route.params;
@@ -41,7 +41,8 @@ const Detalle = ({route}) => {
   }else{
     return(
       <View style={Estilos.container}>
-        <ActivityIndicator/>
+        <Text style={Estilos.Titulo}>CARGANDO...</Text>
+        <ActivityIndicator size={'large'} color={Colors.primary}/>
       </View>
     )
 

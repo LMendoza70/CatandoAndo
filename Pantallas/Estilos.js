@@ -28,7 +28,8 @@ const Estilos=StyleSheet.create({
         backgroundColor:Colors.background,
         alignItems:'center',
         justifyContent:'center',
-        padding:10
+        padding:10,
+        paddingTop:30
     },
     cajaStyle:{
         flexDirection:"row",
@@ -118,7 +119,43 @@ const Estilos=StyleSheet.create({
       TextoContenido:{
         fontSize:15,
         color:Colors.primary
-      }
+      },
+      list: {
+        paddingHorizontal: 16,
+      },
+      cardf: {
+        backgroundColor: Colors.background,
+        borderRadius: 4,
+        padding: 16,
+        marginBottom: 16,
+        shadowColor: Colors.primary,
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+    
+        elevation: 2,
+      },
+      cardTitle: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 8,
+      },
+      cardDescription: {
+        fontSize: 14,
+      },
+      cardImage: {
+        width: '100%',
+        height: 200,
+        marginBottom: 8,
+        borderRadius: 4,
+      },
+      cardAuthor: {
+        fontSize: 12,
+        color: '#666',
+      },
 
 })
 
